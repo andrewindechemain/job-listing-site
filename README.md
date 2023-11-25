@@ -7,9 +7,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 | ------------------- | ------------------------------ | ---------------------------------------------------------------------------------------------------- |
 | 1.Git                  | Version Control | [Version-Control]; [Bitbucket]; [Repo];|
 | 2.Angular              | Type Script-Based FrontEnd Framework| [Typescript];|
-| 3.Karma/Jasmine     | Testing framework| [Test]; [Test Cases];|
-| 4.Figma             | Interface Design| [Prototype]; [Wireframe];|
-| 5.CircleCI          | Continous Intergration tool| [Continous Intergration]; [Workflow Automation];|
+| 3.Karma/Jasmine        | Testing framework| [Test]; [Test Cases];|
+| 4.Figma                | Interface Design| [Prototype]; [Wireframe];|
+| 5.CircleCI             | Continous Intergration tool| [Continous Intergration]; [Workflow Automation];|
 
 <p>The ReadME documents details configuring of an angular Project for a Job Listing and Filtering Application</p>
 
