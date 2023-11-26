@@ -9,7 +9,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 | 2.Angular              | Type Script-Based FrontEnd Framework| [Typescript];|
 | 3.Karma/Jasmine        | Testing framework| [Test]; [Test Cases];|
 | 4.Figma                | Interface Design| [Prototype]; [Wireframe];|
-| 5.CircleCI             | Continous Intergration tool| [Continous Intergration]; [Workflow Automation];|
 
 <p>The ReadME documents details configuring of an angular Project for a Job Listing and Filtering Application</p>
 
@@ -44,6 +43,10 @@ Run`ng lint` to execute linting of the angular application. The dependency can b
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Figma Design
+
+https://www.figma.com/file/sX58U1xuUccBXR2nZ1OVUD/Untitled?type=design&node-id=0%3A1&mode=design&t=GNvtP00Df84e2XIy-1
 
 ## Authors
 
