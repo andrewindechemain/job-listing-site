@@ -45,6 +45,10 @@ Run`ng lint` to execute linting of the angular application. The dependency can b
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+## Figma Design
+
+https://www.figma.com/file/sX58U1xuUccBXR2nZ1OVUD/Untitled?type=design&node-id=0%3A1&mode=design&t=GNvtP00Df84e2XIy-1
+
 ## Authors
 
 Andrew Indeche - *Final work*
