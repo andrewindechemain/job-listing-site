@@ -161,3 +161,16 @@
     margin: 20px; 
     cursor: pointer; 
 }
+.pagination-buttons {
+    list-style: none;
+    display:flex;
+    flex-direction: row;
+    gap:1em;
+    margin:20px 0;
+}
+.page {
+    padding:14px;
+    background-color: green; 
+    border: solid 5px black;
+    color: white; 
+}
