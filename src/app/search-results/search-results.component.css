@@ -34,7 +34,7 @@
     height: 3.5em;
     font-size: 15px;
     font-weight: bold;
-    background-color: #006C67;
+    background-color: green;
     color: white;
     border: solid 5px black;
     cursor: pointer;
@@ -155,6 +155,7 @@
     border: none; 
     border-radius: 10px; 
     background-color: green; 
+    border: solid 5px black;
     color: white; 
     font-size: 20px; 
     margin: 20px; 

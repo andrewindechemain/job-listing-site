@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
@@ -19,7 +20,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     AppRoutingModule,
     NavbarComponent,
     HomepageComponent,
-    SearchResultsComponent, 
+    SearchResultsComponent,
+    FooterComponent, 
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
     FontAwesomeModule
   ],

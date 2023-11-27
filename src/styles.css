@@ -18,3 +18,8 @@ html{
  img{
     width:18%;
 }
+.search-button:hover, .apply-button:hover{
+    background: linear-gradient(45deg,#ff0000, #006C67, #000000);
+    cursor: pointer;
+    animation: glowing 20s linear infinite;
+}
