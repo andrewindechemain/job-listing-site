@@ -42,6 +42,8 @@
 }
 .search-results{
     margin: 5rem;
+    display:grid;
+    gap: 1em;
 }
 
 .filter { 
