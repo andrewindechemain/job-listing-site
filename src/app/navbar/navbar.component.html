@@ -1,0 +1,12 @@
+<nav class="navbar">
+    <div class="navbar-logo" routerLink="/home" alt="My App Logo">
+      Career Client
+    </div>
+    <div class="date" id="datecontainer">
+        <span class="ps-5 pe-1 ms-5"><i class="fa-solid fa-calendar-days fa-lg"></i>
+    </span>
+        <span class="date">{{currentDate | date:'EEEE, MMMM d y'}}</span>
+        <span class="ps-4 mb-4 vertical-bar"> </span>
+        <span class="date"> {{currentDate | date:'hh:mm ' }}</span>
+        </div>
+  </nav>
