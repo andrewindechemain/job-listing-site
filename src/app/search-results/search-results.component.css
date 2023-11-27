@@ -174,3 +174,12 @@
     border: solid 5px black;
     color: white; 
 }
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+    .search-bar{
+        width: 1em;
+        height:4px;
+        font-size: 8px;
+        margin: 2px 6rem;
+        align-items: center;
+    }
+}
