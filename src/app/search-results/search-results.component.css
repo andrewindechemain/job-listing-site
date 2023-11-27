@@ -12,12 +12,12 @@
     gap:3em;
     align-items: center; 
     justify-content: center; 
-    margin: 20px; 
+    margin: 3px; 
 }
 
 .search-input { 
-    width: 600px; 
-    height: 70px; 
+    width: 500px; 
+    height: 50px; 
     background-color: #D9D9D9;
     border: 6px solid #006C67;
     padding: 5px;
@@ -173,4 +173,40 @@
     background-color: green; 
     border: solid 5px black;
     color: white; 
+}
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+    .search-bar{
+        width: 10em;
+        height:4px;
+        font-size: 8px;
+        margin: 2px 4rem;
+        align-items: center;
+    }
+    .filter {
+        font-size: 8px;
+        margin:6em 18em 8em 1em;
+        left:0
+    }
+    .filter-select {
+        width:50%;
+        left:0
+    }
+    .job-card, .job-detail{
+        width:60%;
+        height:40%;
+        font-size: 4px !important;
+    }
+    .job-list{
+        font-size: 4px !important;
+        display: flex; 
+        flex-flow: column wrap; 
+        font-size:6px !important
+    }
+    .job-detail{
+         display: none;
+    }
+    .pagination-buttons{
+        display: none; 
+    }
+   
 }

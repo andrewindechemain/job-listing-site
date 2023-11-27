@@ -9,7 +9,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { StoreModule } from '@ngrx/store'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     SearchResultsComponent,
     FooterComponent, 
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
-    FontAwesomeModule
+    FontAwesomeModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]
