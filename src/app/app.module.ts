@@ -10,11 +10,15 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { StoreModule } from '@ngrx/store'
+import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { FormsModule } from '@angular/forms';
+import { DatePipe } from './date.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DatePipe 
   ],
   imports: [
     BrowserModule,
@@ -23,8 +27,10 @@ import { StoreModule } from '@ngrx/store'
     HomepageComponent,
     SearchResultsComponent,
     FooterComponent, 
+    HttpClientModule,
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
     FontAwesomeModule,
+    FormsModule,
     StoreModule.forRoot({}, {})
   ],
   providers: [],
