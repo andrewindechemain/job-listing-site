@@ -37,7 +37,6 @@ export class HomepageComponent implements OnInit   {
           
         
         searchUser() {
-          if (this.searchForm.valid) {
           this.service.getDetailedSearch()
           .subscribe(data => {
             this.router.navigate(['search'], 
@@ -47,7 +46,6 @@ export class HomepageComponent implements OnInit   {
             console.log(data);
     });
         }
-      }
         onInputChange(event: any) {
           this.searchInput = event.target.value;
           this.service.updateFields(this.searchInput);

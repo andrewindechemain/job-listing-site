@@ -48,7 +48,7 @@
                     <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
                     </span>
                     <p>{{ results[0].location.display_name }}</p> 
-                    <span>{{ results[0].location.created }}</span> 
+                    <span>{{ results[0].created | date  }}</span> 
                 </div> 
                 <div class="job-card"> 
                     <h3>{{ results[1].title }}</h3> 
@@ -56,7 +56,7 @@
                     <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
                     </span> 
                     <p>{{ results[1].location.display_name }}</p> 
-                    <span>h</span> 
+                    <span>{{ results[1].created | date  }}</span> 
                 </div>  
                 <div class="job-card"> 
                     <h3>{{ results[2].title }}</h3> 
@@ -64,14 +64,14 @@
                     <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
                     </span> 
                     <p>{{ results[2].location.display_name }}</p> 
-                    <span>z</span> 
+                    <span>{{ results[2].created | date  }}</span> 
                 </div>  <div class="job-card"> 
                     <h3>{{ results[3].title }}</h3> 
                     <p>{{ results[3].company.display_name }}</p>
                     <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
                     </span> 
                     <p>{{ results[3].location.display_name }}</p> 
-                    <span>n</span> 
+                    <span>{{ results[3].created | date  }}</span> 
                 </div>   
             <div class="job-detail"> 
                 <h2>{{ results[0].title  }}</h2> 
