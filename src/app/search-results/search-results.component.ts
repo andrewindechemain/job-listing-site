@@ -1,11 +1,11 @@
 import { Component, OnInit, ChangeDetectorRef    } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { RouterModule,ActivatedRoute } from '@angular/router';
 import { ApiService } from '../services/api.service';
 @Component({
   selector: 'app-search-results',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule],
   templateUrl: './search-results.component.html',
   styleUrl: './search-results.component.css'
 })
