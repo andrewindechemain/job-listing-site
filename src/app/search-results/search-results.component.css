@@ -14,7 +14,9 @@
     justify-content: center; 
     margin: 3px; 
 }
-
+#upper-detail{
+    font-weight: bold;
+}
 .search-input { 
     width: 500px; 
     height: 50px; 
@@ -92,7 +94,7 @@ job-list-detail{
 }
 
 .job-card {
-     width: 300px; 
+    width: 300px; 
     height: 200px; 
     border: 2px solid #d3d3d3; 
     border-radius: 5px; 
@@ -102,7 +104,7 @@ job-list-detail{
 }
 
 .job-card h3 { 
-    font-size: 18px; 
+    font-size: 14px; 
     font-weight: bolder;
     color: black; 
     margin-bottom: 10px; 

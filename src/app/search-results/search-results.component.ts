@@ -24,6 +24,9 @@ export class SearchResultsComponent implements OnInit   {
       this.results = results.results || [];
     });
   }
+  onApplyNowClick() {
+    alert('Your Application has been recieved!'); 
+  }
   applyFilters() {
     this.filteredResults = this.results.slice();
     if (this.location !== 'all') {
