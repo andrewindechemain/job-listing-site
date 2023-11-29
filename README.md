@@ -48,7 +48,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 https://www.figma.com/file/sX58U1xuUccBXR2nZ1OVUD/Untitled?type=design&node-id=0%3A1&mode=design&t=GNvtP00Df84e2XIy-1
 
-## Figma Design
+## API Config
 For Api config and endpoints
 https://developer.adzuna.com/login
 
