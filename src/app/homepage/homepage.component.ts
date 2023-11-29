@@ -2,7 +2,7 @@
 import { Component, OnInit, ChangeDetectorRef  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../services/api.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http'; 
 
@@ -16,6 +16,7 @@ import { HttpClient } from '@angular/common/http';
 export class HomepageComponent implements OnInit   {
           searchInput:any;
           searchResults:any;
+          searchForm!: FormGroup; 
           search: any;
           title: any;
           job_logo: any;
@@ -27,9 +28,16 @@ export class HomepageComponent implements OnInit   {
           relevance: any;
           date_posted: any
 
-        constructor(private router: Router,private cdr: ChangeDetectorRef,private service: ApiService, private http:HttpClient) { }
-
+        constructor(private router: Router,private cdr: ChangeDetectorRef,
+          private service: ApiService, private http:HttpClient, private fb: FormBuilder) {
+            this.searchForm = this.fb.group({
+              search: ['', Validators.required]
+            })
+           }
+          
+        
         searchUser() {
+          if (this.searchForm.valid) {
           this.service.getDetailedSearch()
           .subscribe(data => {
             this.router.navigate(['search'], 
@@ -39,6 +47,7 @@ export class HomepageComponent implements OnInit   {
             console.log(data);
     });
         }
+      }
         onInputChange(event: any) {
           this.searchInput = event.target.value;
           this.service.updateFields(this.searchInput);
@@ -49,8 +58,12 @@ export class HomepageComponent implements OnInit   {
           this.searchResults.subscribe((data: ApiService) => {
             this.searchResults = data || { results: [] };
   });
+  this.searchForm = this.fb.group({
+    search: ['', Validators.required]
+  });
 
         }
+        
 
        
 }
