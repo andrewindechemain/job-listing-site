@@ -5,8 +5,10 @@
             Filter by Location:
         </label> 
     <select class="filter-select" id="location">
-        [(ngModel)]="location" (change)="onLocationChange($event)"
+        [(ngModel)]="location" (change)="applyFilters($event)"
         <option value="all">All</option> 
+        <option value="us">US</option>
+        <option value="gb">GB</option>
     </select> 
 </div> 
     <div> 
@@ -79,30 +81,30 @@
                  <button class="apply-button" (click)="onApplyNowClick()">Apply Now</button> 
             </div>
             <div class="job-detail"> 
-                <h2>{{ results[0].title  }}</h2> 
+                <h2>{{ results[1].title  }}</h2> 
                 <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
-                        <span id="upper-detail"><p class="organization">{{ results[0].company.display_name }}</p> 
+                        <span id="upper-detail"><p class="organization">{{ results[1].company.display_name }}</p> 
                     <p class="organization">{{ results[1].location.display_name }}</p></span>
                     <p class="type">{{results[1].contract_type}}</p></span>
-                <p class="resultsdescription">{{ results[0].description }}</p>
+                <p class="resultsdescription">{{ results[1].description }}</p>
                  <p class="title">Salary Approximation in $</p> 
                  <ul> 
-                    <li>{{results[0].salary_max}}</li> 
-                    <li>{{results[0].salary_min}}</li> 
+                    <li>{{results[1].salary_max}}</li> 
+                    <li>{{results[1].salary_min}}</li> 
                 </ul> 
                  <button class="apply-button" (click)="onApplyNowClick()" >Apply Now</button> 
             </div>
             <div class="job-detail"> 
-                <h2>{{ results[0].title  }}</h2> 
+                <h2>{{ results[2].title  }}</h2> 
                 <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
-                <span id="upper-detail"><p class="organization">{{ results[0].company.display_name }}</p> 
-                    <p class="organization">{{ results[1].location.display_name }}</p></span>
-                    <p class="type">{{results[1].contract_type}}</p></span>
-                <p class="resultsdescription">{{ results[0].description }}</p>
+                <span id="upper-detail"><p class="organization">{{ results[2].company.display_name }}</p> 
+                    <p class="organization">{{ results[2].location.display_name }}</p></span>
+                    <p class="type">{{results[2].contract_type}}</p></span>
+                <p class="resultsdescription">{{ results[2].description }}</p>
                  <p class="title">Salary Approximation in $</p> 
                  <ul> 
-                    <li>{{results[0].salary_max}}</li> 
-                    <li>{{results[0].salary_min}}</li> 
+                    <li>{{results[2].salary_max}}</li> 
+                    <li>{{results[2].salary_min}}</li> 
                 </ul> 
                  <button class="apply-button" (click)="onApplyNowClick()">Apply Now</button> 
             </div>

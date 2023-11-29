@@ -1,7 +1,7 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef    } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-
+import { ApiService } from '../services/api.service';
 @Component({
   selector: 'app-search-results',
   standalone: true,
@@ -17,15 +17,34 @@ export class SearchResultsComponent implements OnInit   {
   relevance: string = 'all';
   filteredResults: any[] = [];
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+  private route: ActivatedRoute) {}
+  private service!: ApiService; 
+    private cdr!: ChangeDetectorRef
    ngOnInit() {
     this.route.queryParams.subscribe(params => {
       const results = JSON.parse(params['results']);
       this.results = results.results || [];
+      this.applyFilters();
     });
   }
   onApplyNowClick() {
     alert('Your Application has been recieved!'); 
+  }
+  onLocationChange() {
+    this.applyFilters();
+  }
+
+  onDateChange() {
+    this.applyFilters();
+  }
+
+  onTypeChange() {
+    this.applyFilters();
+  }
+
+  onRelevanceChange() {
+    this.applyFilters();
   }
   applyFilters() {
     this.filteredResults = this.results.slice();
