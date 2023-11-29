@@ -67,10 +67,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "job-listing-site:build:production"
+              "buildTarget": "job-listing-site:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             },
             "development": {
-              "buildTarget": "job-listing-site:build:development"
+              "buildTarget": "job-listing-site:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

@@ -9,11 +9,12 @@
         <label class="filter-label" for="location">
             Filter by Location:
         </label> 
-    <select class="filter-select" id="location"> 
+    <select class="filter-select" id="location">
+        [(ngModel)]="location" (change)="onLocationChange($event)"
         <option value="all">All</option> 
-        <option value="nairobi">Nairobi</option> 
-        <option value="mombasa">Mombasa</option> 
-        <option value="kisumu">Kisumu</option> 
+        <option value="us">USA</option> 
+        <option value="gb">Great Britain</option> 
+        <option value="fr">France</option> 
     </select> 
 </div> 
     <div> 
@@ -45,20 +46,46 @@
         </div> 
         <div class="job-list"> 
                 <div class="job-card"> 
-                    <h3>Software Engineer</h3> 
-                    <p>Microsoft</p> 
+                    *ngFor="let job of jobs">
+                    <h3>{{job.title}}</h3> 
+                    <p>{{job.company}}</p> 
                     <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
                     </span>
-                    <p>Nairobi, Kenya</p> 
-                    <span>Posted 3 Days Ago</span> 
+                    <p>{{job.location}}</p> 
+                    <span>Posted {{job.date}}</span> 
                 </div> 
                 <div class="job-card"> 
-                    <h3>Program Assistant</h3> 
-                    <p>Redington Gulf Corporation</p>
+                    *ngFor="let job of jobs"
+                    <h3>{{job.title}}</h3> 
+                    <p>{{job.company}}</p>
                     <span class="images"><img src="assets/images/red logo.png" alt="assets/img/avatar.png">
                     </span> 
-                    <p>Nairobi, Kenya</p> 
-                    <span>Posted 1 Week Ago</span> 
+                    <p>{{job.location}}</p> 
+                    <span>{{job.date}}</span> 
+                </div>  
+                <div class="job-card"> 
+                    *ngFor="let job of jobs"
+                    <h3>{{job.title}}</h3> 
+                    <p>{{job.company}}</p>
+                    <span class="images"><img src="assets/images/red logo.png" alt="assets/img/avatar.png">
+                    </span> 
+                    <p>{{job.location}}</p> 
+                    <span>{{job.date}}</span> 
+                </div>  <div class="job-card"> 
+                    <h3>{{job.title}}</h3> 
+                    <p>{{job.company}}</p>
+                    <span class="images"><img src="assets/images/red logo.png" alt="assets/img/avatar.png">
+                    </span> 
+                    <p>{{job.location}}</p> 
+                    <span>{{job.date}}</span> 
+                </div>  
+                <div class="job-card"> 
+                    <h3>{{job.title}}</h3> 
+                    <p>{{job.company}}</p>
+                    <span class="images"><img src="assets/images/red logo.png" alt="assets/img/avatar.png">
+                    </span> 
+                    <p>{{job.location}}</p> 
+                    <span>{{job.date}}</span> 
                 </div>  
             <div class="job-detail"> 
                 <h2>Software Engineer</h2> 

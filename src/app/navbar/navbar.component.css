@@ -9,6 +9,7 @@
     padding: 0.5rem 2rem;
     font-size: 2rem;
     font-weight: bolder;
+    cursor: pointer;
 }
 .navbar-links{
     list-style: none;
