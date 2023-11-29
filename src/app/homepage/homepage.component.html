@@ -1,6 +1,5 @@
 <div class="welcome">
     <p>Welcome to Career Client</p>
-    <p class="search" *ngIf="search">{{search.what}}</p>
     <p class = "motto">Kenya's number <span class="ranking">#1 job site</span></p>
   </div>
   <form #searchField="ngForm">
@@ -10,11 +9,4 @@
   </div>
 </form>
 
-<div class="results" *ngIf="searchResults.length > 0">
-  <h2>Search results</h2>
-  <ul>
-    <li *ngFor="let result of searchResults">
-      <p class="search">{{result.display_name}}</p>
-    </li>
-  </ul>
-</div>
+

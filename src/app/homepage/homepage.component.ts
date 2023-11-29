@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Component, OnInit  } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../services/api.service';
 import { FormsModule } from '@angular/forms';
@@ -27,24 +27,26 @@ export class HomepageComponent implements OnInit   {
           relevance: any;
           date_posted: any
 
-        constructor(private service: ApiService, private router: Router, private http:HttpClient) { }
+        constructor(private cdr: ChangeDetectorRef,private service: ApiService, private router: Router, private http:HttpClient) { }
 
         searchUser() {
           this.service.getDetailedSearch()
           .subscribe(data => {
             this.searchResults = data;
-            console.log(data)
+            this.cdr.detectChanges();
+            console.log(data);
     });
         }
-        ngOnInit(): void {
-          // initialize the variables
-          this.searchInput = '';
-          this.searchResults = [];
-        }
-
         onInputChange(event: any) {
           this.searchInput = event.target.value;
           this.service.updateFields(this.searchInput);
         }
 
+        ngOnInit() {
+          this.searchInput = '';
+          this.searchResults = [];
+
+        }
+
+       
 }

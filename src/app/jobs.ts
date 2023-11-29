@@ -1,7 +1,7 @@
 export class jobPosting {
     constructor(
       public searchInput:string,
-      public searchResults:any,
+      public searchResults:string,
       public search: string,
       public title: string,
       public job_logo: string,

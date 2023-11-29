@@ -11,7 +11,7 @@ export class ApiService {
   private apiKey = environment.apiKey;
   constructor(private http: HttpClient) { }
   getJobsdata(){
-    return this.http.get (`https://api.adzuna.com/v1/api/jobs/us/search/1?app_id={this.clientId}&app_key={this.apiKey}`);
+    return this.http.get (`https://api.adzuna.com/v1/api/jobs/us/search/1?app_id=${this.clientId}&app_key=${this.apiKey}`);
   }
   getLocation(){
     return this.http.get (`https://api.adzuna.com/v1/api/jobs/us/categories?app_id=${this.clientId}&app_key=${this.apiKey}`);
@@ -20,7 +20,7 @@ export class ApiService {
     return this.http.get (`https://api.adzuna.com/v1/api/jobs/us/top_companies?app_id=${this.clientId}&app_key=${this.apiKey}`);
   }
   getDetailedSearch(){
-    return this.http.get (`http://api.adzuna.com/v1/api/jobs/us/search/1?app_id=${this.clientId}&app_key=${this.apiKey}&what=${this.search}&results_per_page=5&content-type=application/json`)
+    return this.http.get (`http://api.adzuna.com/v1/api/jobs/us/search/1?app_id=${this.clientId}&app_key=${this.apiKey}&what=${this.search}&results_per_page=5`)
   }
   updateFields(what: string) {
     this.search = what;
