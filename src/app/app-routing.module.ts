@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NavbarComponent } from './navbar/navbar.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 const routes: Routes = [
-  { path: '/home',component:NavbarComponent },
+  { path: '',component: HomepageComponent },
+  { path: 'search',component: SearchResultsComponent},
 ];
 
 @NgModule({

@@ -45,3 +45,11 @@
         cursor: pointer;
         border-radius: 12px;
       }
+      @media only screen and (min-width: 320px) and (max-width: 768px) {
+        .search, .welcome{
+          font-size: 1rem;
+        }
+        .search-input{
+          width:40%
+        }
+      }

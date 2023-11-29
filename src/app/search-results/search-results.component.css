@@ -14,7 +14,9 @@
     justify-content: center; 
     margin: 3px; 
 }
-
+#upper-detail{
+    font-weight: bold;
+}
 .search-input { 
     width: 500px; 
     height: 50px; 
@@ -43,14 +45,19 @@
 .search-results {
     margin: 5rem;
     display:grid;
-    gap: 1em;
+    grid-template-columns: auto;
 }
 .detail-summary {
     float: right;
-    position: absolute;
     font-weight:bold;
     right:0;
     margin: 1em 14em
+}
+.job-detail-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: -47em 30em 1em 36em;
 }
 .organization {
     color:#006C67 !important;
@@ -80,9 +87,14 @@
     flex-flow: column wrap; 
     margin: 20px; 
 }
+job-list-detail{
+    display: flex; 
+    flex-flow: column wrap; 
+    gap:1px;
+}
 
 .job-card {
-     width: 300px; 
+    width: 300px; 
     height: 200px; 
     border: 2px solid #d3d3d3; 
     border-radius: 5px; 
@@ -92,7 +104,7 @@
 }
 
 .job-card h3 { 
-    font-size: 18px; 
+    font-size: 14px; 
     font-weight: bolder;
     color: black; 
     margin-bottom: 10px; 
@@ -108,20 +120,20 @@
     font-size: 12px; 
     color: gray; 
 }
-
 .job-detail { 
     width: 600px; 
-    height: 400px; 
-    position: absolute;
-    right:0;
-    display: inline-block;
+    height: 300px; 
     border: 2px solid #d3d3d3; 
-    border-radius: 5px; 
-    margin: 16px 8rem; 
+    border-radius: 5px;  
     padding: 10px; 
+    right:0 !important;
+    top:10;
     overflow-y: scroll; 
+    gap:2.1em
 }
-
+.organization{
+    color: #006C67 !important; 
+}
 .job-detail h2 { 
     font-size: 24px;
     font-weight:bold; 
@@ -185,21 +197,21 @@
     .filter {
         font-size: 8px;
         margin:6em 18em 8em 1em;
-        left:0
+        display: flex;
+        flex-direction: column;
     }
     .filter-select {
-        width:50%;
         left:0
     }
-    .job-card, .job-detail{
-        width:60%;
+    .job-card{
+        width:40%;
         height:40%;
-        font-size: 4px !important;
+        font-size: 10px !important;
+        margin: 1em 1em 5px -4em;
     }
     .job-list{
         font-size: 4px !important;
         display: flex; 
-        flex-flow: column wrap; 
         font-size:6px !important
     }
     .job-detail{
