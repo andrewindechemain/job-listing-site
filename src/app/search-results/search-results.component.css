@@ -124,6 +124,8 @@ job-list-detail{
     margin: 16px 8rem; 
     padding: 10px; 
     overflow-y: scroll; 
+    display: grid;
+    gap:1.3em
 }
 
 .job-detail h2 { 

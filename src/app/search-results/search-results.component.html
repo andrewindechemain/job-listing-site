@@ -1,9 +1,4 @@
 <div class="search-results">
-<div class="search-bar"> 
-    <input type="text" class="search-input" 
-        placeholder="Search by Title or Company Name"> 
-    <button class="search-button">Search!</button> 
-</div>
      <div class="filter"> 
         <div> 
         <label class="filter-label" for="location">
@@ -53,7 +48,7 @@
                     <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
                     </span>
                     <p>{{ results[0].location.display_name }}</p> 
-                    <span>Posted y</span> 
+                    <span>{{ results[0].location.created }}</span> 
                 </div> 
                 <div class="job-card"> 
                     <h3>{{ results[1].title }}</h3> 
@@ -83,11 +78,12 @@
                 <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
                     <span class="detail-summary">
                     <p class="organization">{{ results[0].company.display_name }}</p> 
-                    <p class="organization">{{ results[1].location }}</p>
+                    <p class="organization">{{ results[1].location.display_name }}</p>
                     <p class="type">{{results[1].contract_type}}</p></span>
                 </span>
-                <p>{{ results[0].description }}</p>
-                 <p class="title">Salary Range</p> 
+                <h2>Job Summary</h2>
+                <p class="resultsdescription">{{ results[0].description }}</p>
+                 <p class="title">Salary Approximation in $</p> 
                  <ul> 
                     <li>{{results[0].salary_max}}</li> 
                     <li>{{results[0].salary_min}}</li> 
