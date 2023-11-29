@@ -45,9 +45,13 @@ export class SearchResultsComponent implements OnInit   {
       );
     }
     if (this.relevance === 'most-relevant') {
-      // Implement logic for most-relevant filtering
+      this.filteredResults = this.filteredResults.filter(
+        (result) => result.company.display_name === this.relevance
+      );
     } else if (this.relevance === 'least-relevant') {
-      // Implement logic for least-relevant filtering
-    }
+      this.filteredResults = this.filteredResults.filter(
+        (result) => result.salary_min === this.relevance
+        );
+      }
   }
 }

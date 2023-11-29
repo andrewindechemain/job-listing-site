@@ -43,7 +43,7 @@
 .search-results {
     margin: 5rem;
     display:grid;
-    gap: 1em;
+    grid-template-columns: auto;
 }
 .detail-summary {
     float: right;
@@ -113,19 +113,17 @@ job-list-detail{
     font-size: 12px; 
     color: gray; 
 }
-
 .job-detail { 
     width: 600px; 
     height: 400px; 
-    position: absolute;
-    right:0;
     border: 2px solid #d3d3d3; 
     border-radius: 5px; 
-    margin: 16px 8rem; 
+    margin: 8em 8rem; 
     padding: 10px; 
+    position:absolute;
+    right:0;
     overflow-y: scroll; 
-    display: grid;
-    gap:1.3em
+    gap:2.1em
 }
 
 .job-detail h2 { 

@@ -7,9 +7,6 @@
     <select class="filter-select" id="location">
         [(ngModel)]="location" (change)="onLocationChange($event)"
         <option value="all">All</option> 
-        <option value="us">USA</option> 
-        <option value="gb">Great Britain</option> 
-        <option value="fr">France</option> 
     </select> 
 </div> 
     <div> 
@@ -17,9 +14,6 @@
         </label> 
         <select class="filter-select" id="date"> 
             <option value="all">All</option> 
-            <option value="today">Today</option>
-             <option value="week">This Week</option> 
-             <option value="month">This Month</option> 
             </select> </div> <div> 
         <label class="filter-label" for="type">Job Type:
 
@@ -65,32 +59,69 @@
                     </span> 
                     <p>{{ results[2].location.display_name }}</p> 
                     <span>{{ results[2].created | date  }}</span> 
-                </div>  <div class="job-card"> 
+                </div>  
+                <div class="job-card"> 
                     <h3>{{ results[3].title }}</h3> 
                     <p>{{ results[3].company.display_name }}</p>
                     <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
                     </span> 
                     <p>{{ results[3].location.display_name }}</p> 
                     <span>{{ results[3].created | date  }}</span> 
-                </div>   
-            <div class="job-detail"> 
-                <h2>{{ results[0].title  }}</h2> 
-                <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
-                    <span class="detail-summary">
-                    <p class="organization">{{ results[0].company.display_name }}</p> 
-                    <p class="organization">{{ results[1].location.display_name }}</p>
-                    <p class="type">{{results[1].contract_type}}</p></span>
-                </span>
-                <h2>Job Summary</h2>
-                <p class="resultsdescription">{{ results[0].description }}</p>
-                 <p class="title">Salary Approximation in $</p> 
-                 <ul> 
-                    <li>{{results[0].salary_max}}</li> 
-                    <li>{{results[0].salary_min}}</li> 
-                </ul> 
-                 <button class="apply-button">Apply Now</button> 
-            </div>   
-        </div> 
+                </div>
+                </div>
+                <div class="job-detail"> 
+                    <h2>{{ results[0].title  }}</h2> 
+                    <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
+                        <span class="detail-summary">
+                        <p class="display_name">{{ results[0].company.display_name }}</p> 
+                        <p class="display-name">{{ results[1].location.display_name }}</p>
+                        <p class="type">{{results[1].contract_type}}</p></span>
+                    </span>
+                    <h2>Job Summary</h2>
+                    <p class="resultsdescription">{{ results[0].description }}</p>
+                     <p class="title">Salary Approximation in $</p> 
+                     <ul> 
+                        <li>{{results[0].salary_max}}</li> 
+                        <li>{{results[0].salary_min}}</li> 
+                    </ul> 
+                     <button class="apply-button">Apply Now</button> 
+                </div>
+                <div class="detailedcards" id="details">
+                <div class="job-detail"> 
+                    <h2>{{ results[0].title  }}</h2> 
+                    <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
+                        <span class="detail-summary">
+                        <p class="display_name">{{ results[0].company.display_name }}</p> 
+                        <p class="display-name">{{ results[1].location.display_name }}</p>
+                        <p class="type">{{results[1].contract_type}}</p></span>
+                    </span>
+                    <h2>Job Summary</h2>
+                    <p class="resultsdescription">{{ results[0].description }}</p>
+                     <p class="title">Salary Approximation in $</p> 
+                     <ul> 
+                        <li>{{results[0].salary_max}}</li> 
+                        <li>{{results[0].salary_min}}</li> 
+                    </ul> 
+                     <button class="apply-button">Apply Now</button> 
+                </div>
+                <div class="job-detail"> 
+                    <h2>{{ results[0].title  }}</h2> 
+                    <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
+                        <span class="detail-summary">
+                        <p class="display_name">{{ results[0].company.display_name }}</p> 
+                        <p class="display-name">{{ results[1].location.display_name }}</p>
+                        <p class="type">{{results[1].contract_type}}</p></span>
+                    </span>
+                    <h2>Job Summary</h2>
+                    <p class="resultsdescription">{{ results[0].description }}</p>
+                     <p class="title">Salary Approximation in $</p> 
+                     <ul> 
+                        <li>{{results[0].salary_max}}</li> 
+                        <li>{{results[0].salary_min}}</li> 
+                    </ul> 
+                     <button class="apply-button">Apply Now</button> 
+                </div>
+            </div>
             <ul class = "pagination-buttons">
                 <li><button class="page">1</button></li>
                 <li><button class="page">2</button></li>
@@ -98,4 +129,7 @@
                 <li><button class="page">4</button></li>
                 <li><button class="page">5</button></li>
              </ul>
-</div>
+        </div> 
+
+            
+
