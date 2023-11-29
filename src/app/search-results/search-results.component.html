@@ -46,69 +46,55 @@
         </div> 
         <div class="job-list" id="job-list"> 
                 <div class="job-card"> 
-                    *ngFor="let job of jobs">
-                    <h3>{{job.title}}</h3> 
-                    <p>{{job.company}}</p> 
+                    <div *ngIf="results.length > 0">
+                    <h3>{{ results[0].title  }}</h3> 
+                    </div>
+                    <p>{{ results[0].company.display_name }}</p> 
                     <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
                     </span>
-                    <p>{{job.location}}</p> 
-                    <span>Posted {{job.date}}</span> 
+                    <p>{{ results[0].location.display_name }}</p> 
+                    <span>Posted y</span> 
                 </div> 
                 <div class="job-card"> 
-                    *ngFor="let job of jobs"
-                    <h3>{{job.title}}</h3> 
-                    <p>{{job.company}}</p>
-                    <span class="images"><img src="assets/images/red logo.png" alt="assets/img/avatar.png">
+                    <h3>{{ results[1].title }}</h3> 
+                    <p>{{ results[1].company.display_name }}</p>
+                    <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
                     </span> 
-                    <p>{{job.location}}</p> 
-                    <span>{{job.date}}</span> 
+                    <p>{{ results[1].location.display_name }}</p> 
+                    <span>h</span> 
                 </div>  
                 <div class="job-card"> 
-                    *ngFor="let job of jobs"
-                    <h3>{{job.title}}</h3> 
-                    <p>{{job.company}}</p>
-                    <span class="images"><img src="assets/images/red logo.png" alt="assets/img/avatar.png">
+                    <h3>{{ results[2].title }}</h3> 
+                    <p>{{ results[2].company.display_name }}</p>
+                    <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
                     </span> 
-                    <p>{{job.location}}</p> 
-                    <span>{{job.date}}</span> 
+                    <p>{{ results[2].location.display_name }}</p> 
+                    <span>z</span> 
                 </div>  <div class="job-card"> 
-                    <h3>{{job.title}}</h3> 
-                    <p>{{job.company}}</p>
-                    <span class="images"><img src="assets/images/red logo.png" alt="assets/img/avatar.png">
+                    <h3>{{ results[3].title }}</h3> 
+                    <p>{{ results[3].company.display_name }}</p>
+                    <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
                     </span> 
-                    <p>{{job.location}}</p> 
-                    <span>{{job.date}}</span> 
+                    <p>{{ results[3].location.display_name }}</p> 
+                    <span>n</span> 
                 </div>   
             <div class="job-detail"> 
-                <h2>Software Engineer</h2> 
+                <h2>{{ results[0].title  }}</h2> 
                 <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
                     <span class="detail-summary">
-                    <p class="organization">Microsoft</p> 
-                    <p class="organization">Nairobi, Kenya</p>
-                    <p class="type">Full Time</p></span>
+                    <p class="organization">{{ results[0].company.display_name }}</p> 
+                    <p class="organization">{{ results[1].location }}</p>
+                    <p class="type">{{results[1].contract_type}}</p></span>
                 </span>
-                <p>Microsoft is looking for a talented and passionate software engineer to join our team in Nairobi, Kenya. 
-                    You will be responsible for developing innovative solutions for our customers and partners using cutting-edge technologies.</p> 
-                    <p class="title">Job Description</p>
-                <ul> 
-                    <li>Design, develop, test, and deploy software applications and services using Microsoft technologies.</li> 
-                    <li>Collaborate with other engineers, product managers, and designers to deliver high-quality 
-                        products and user experiences.</li> 
-                    <li>Follow best practices and standards for coding, testing, 
-                            documentation, and performance.</li> 
-                    <li>Troubleshoot and resolve issues and bugs in a timely manner.</li> 
-                    <li>Learn new skills and technologies and share your knowledge with the team.</li> 
-                </ul> <p class="title">Education: Bachelor's Degree</p> 
-                        <p class="title">Knowledge/Skills:</p> 
-                <ul> 
-                    <li>Strong programming skills in C#, .NET, ASP.NET, SQL, and other Microsoft technologies.</li> 
-                    <li>Experience with web development, cloud computing, and DevOps tools and methodologies.</li> 
-                    <li>Familiarity with HTML, CSS, JavaScript, and other web technologies.</li> 
-                    <li>Good communication, teamwork, and problem-solving skills.</li> 
-                    <li>Passion for learning and innovation.</li>
-                 </ul> 
+                <p>{{ results[0].description }}</p>
+                 <p class="title">Salary Range</p> 
+                 <ul> 
+                    <li>{{results[0].salary_max}}</li> 
+                    <li>{{results[0].salary_min}}</li> 
+                </ul> 
                  <button class="apply-button">Apply Now</button> 
-            </div> 
+            </div>   
+        </div> 
             <ul class = "pagination-buttons">
                 <li><button class="page">1</button></li>
                 <li><button class="page">2</button></li>

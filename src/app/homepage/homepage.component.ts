@@ -27,11 +27,13 @@ export class HomepageComponent implements OnInit   {
           relevance: any;
           date_posted: any
 
-        constructor(private cdr: ChangeDetectorRef,private service: ApiService, private router: Router, private http:HttpClient) { }
+        constructor(private router: Router,private cdr: ChangeDetectorRef,private service: ApiService, private http:HttpClient) { }
 
         searchUser() {
           this.service.getDetailedSearch()
           .subscribe(data => {
+            this.router.navigate(['search'], 
+            { queryParams: { results: JSON.stringify(data) } });
             this.searchResults = data;
             this.cdr.detectChanges();
             console.log(data);
@@ -43,8 +45,10 @@ export class HomepageComponent implements OnInit   {
         }
 
         ngOnInit() {
-          this.searchInput = '';
-          this.searchResults = [];
+          this.searchResults = this.service.getDetailedSearch();
+          this.searchResults.subscribe((data: ApiService) => {
+            this.searchResults = data || { results: [] };
+  });
 
         }
 

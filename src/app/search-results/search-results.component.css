@@ -80,6 +80,11 @@
     flex-flow: column wrap; 
     margin: 20px; 
 }
+job-list-detail{
+    display: flex; 
+    flex-flow: column wrap; 
+    gap:1px;
+}
 
 .job-card {
      width: 300px; 
@@ -111,10 +116,9 @@
 
 .job-detail { 
     width: 600px; 
-    height: 1000px; 
+    height: 400px; 
     position: absolute;
     right:0;
-    display: inline-block;
     border: 2px solid #d3d3d3; 
     border-radius: 5px; 
     margin: 16px 8rem; 
