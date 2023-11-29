@@ -47,10 +47,15 @@
 }
 .detail-summary {
     float: right;
-    position: absolute;
     font-weight:bold;
     right:0;
     margin: 1em 14em
+}
+.job-detail-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: -47em 30em 1em 36em;
 }
 .organization {
     color:#006C67 !important;
@@ -115,17 +120,18 @@ job-list-detail{
 }
 .job-detail { 
     width: 600px; 
-    height: 400px; 
+    height: 300px; 
     border: 2px solid #d3d3d3; 
-    border-radius: 5px; 
-    margin: 8em 8rem; 
+    border-radius: 5px;  
     padding: 10px; 
-    position:absolute;
-    right:0;
+    right:0 !important;
+    top:10;
     overflow-y: scroll; 
     gap:2.1em
 }
-
+.organization{
+    color: #006C67 !important; 
+}
 .job-detail h2 { 
     font-size: 24px;
     font-weight:bold; 
