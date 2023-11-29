@@ -44,7 +44,7 @@
             </select> 
         </div> 
         </div> 
-        <div class="job-list"> 
+        <div class="job-list" id="job-list"> 
                 <div class="job-card"> 
                     *ngFor="let job of jobs">
                     <h3>{{job.title}}</h3> 
@@ -78,15 +78,7 @@
                     </span> 
                     <p>{{job.location}}</p> 
                     <span>{{job.date}}</span> 
-                </div>  
-                <div class="job-card"> 
-                    <h3>{{job.title}}</h3> 
-                    <p>{{job.company}}</p>
-                    <span class="images"><img src="assets/images/red logo.png" alt="assets/img/avatar.png">
-                    </span> 
-                    <p>{{job.location}}</p> 
-                    <span>{{job.date}}</span> 
-                </div>  
+                </div>   
             <div class="job-detail"> 
                 <h2>Software Engineer</h2> 
                 <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
