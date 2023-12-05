@@ -53,11 +53,10 @@
     right:0;
     margin: 1em 14em
 }
-.job-detail-container{
+.top-container{
     display:flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin: -47em 30em 1em 36em;
+    flex-direction:row;
+    gap:9em
 }
 .organization {
     color:#006C67 !important;
@@ -85,7 +84,7 @@
 .job-list {
     display: flex; 
     flex-flow: column wrap; 
-    margin: 20px; 
+    margin: 10px; 
 }
 job-list-detail{
     display: flex; 
@@ -94,7 +93,7 @@ job-list-detail{
 }
 
 .job-card {
-    width: 300px; 
+    width: 400px; 
     height: 238px; 
     border: 2px solid #d3d3d3; 
     border-radius: 5px; 
@@ -115,6 +114,9 @@ job-list-detail{
     color: #006C67; 
     margin-bottom: 10px; 
 }
+.job-detail-container {
+    margin:0.9em;
+}
 
 .job-card span { 
     font-size: 12px; 
@@ -126,10 +128,8 @@ job-list-detail{
     border: 2px solid #d3d3d3; 
     border-radius: 5px;  
     padding: 40px; 
-    right:0 !important;
-    top:10;
     overflow-y: scroll; 
-    gap:2.1em
+    gap:4em
 }
 .organization{
     color: #006C67 !important; 

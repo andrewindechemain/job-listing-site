@@ -4,7 +4,7 @@
             placeholder="Search by Title or Company Name"> 
         <button class="search-button">Search!</button> 
     </div>
-     <div class="filter"> 
+     <div class="filter" id="filter"> 
         <div> 
         <label class="filter-label" for="location">
             Filter by Location:
@@ -41,7 +41,8 @@
             </select> 
         </div> 
         </div> 
-        <div class="job-list" id="job-list"> 
+        <div class="top-container">
+        <div class="job-list"> 
                 <div class="job-card"> 
                     <div *ngIf="results.length > 0">
                     <h3>{{ results[0].title  }}</h3> 
@@ -68,8 +69,7 @@
                     <p>{{ results[2].location.display_name }}</p> 
                     <span>{{ results[2].created | date  }}</span> 
                 </div>  
-                </div>
-        </div> 
+                </div> 
         <div class="job-detail-container">
             <div class="job-detail"> 
                 <h2>{{ results[0].title  }}</h2> 
@@ -113,8 +113,8 @@
                 </ul> 
                  <button class="apply-button" (click)="onApplyNowClick()">Apply Now</button> 
             </div>
-               
+        </div>
             </div>
-
+        </div>
             
 
