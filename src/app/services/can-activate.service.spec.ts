@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SearchService } from './search.service';
+import { CanActivateService } from './can-activate.service';
 
-describe('SearchService', () => {
-  let service: SearchService;
+describe('CanActivateService', () => {
+  let service: CanActivateService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(SearchService);
+    service = TestBed.inject(CanActivateService);
   });
 
   it('should be created', () => {
