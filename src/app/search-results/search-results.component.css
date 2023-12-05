@@ -177,8 +177,9 @@ job-list-detail{
     list-style: none;
     display:flex;
     flex-direction: row;
+    left:0;
     gap:1em;
-    margin:20px 0;
+    margin:4em 3em;
 }
 .page {
     padding:14px;
@@ -204,10 +205,10 @@ job-list-detail{
         left:0
     }
     .job-card{
-        width:40%;
+        width:100%;
         height:40%;
-        font-size: 10px !important;
-        margin: 1em 1em 5px -4em;
+        font-size: 6px !important;
+        margin: 1em 0em 5px 0em;
     }
     .job-list{
         font-size: 4px !important;
