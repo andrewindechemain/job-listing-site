@@ -21,6 +21,7 @@
 #upper-detail{
     font-weight: bold;
     flex-direction: row;
+    margin:2em;
 }
 .search-input { 
     width: 500px; 
