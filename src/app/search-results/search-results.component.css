@@ -5,7 +5,11 @@
     padding: 10px; 
     text-align: center; 
 }
-
+.images{
+    display:flex;
+    flex-direction: row;
+    gap:5em;
+}
 .search-bar { 
     display: flex; 
     flex-direction: row;
@@ -16,6 +20,7 @@
 }
 #upper-detail{
     font-weight: bold;
+    flex-direction: row;
 }
 .search-input { 
     width: 500px; 
@@ -89,7 +94,7 @@
 job-list-detail{
     display: flex; 
     flex-flow: column wrap; 
-    gap:1px;
+    gap: 5rem;
 }
 
 .job-card {

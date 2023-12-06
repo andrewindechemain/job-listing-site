@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { DatePipe } from './pipes/date.pipe';
 import { ApiService } from './services/api.service';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { ApiService } from './services/api.service';
     HttpClientModule,
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
     FontAwesomeModule,
+    NgxPaginationModule,
     StoreModule.forRoot({}, {}),
   ],
   providers: [ApiService],
