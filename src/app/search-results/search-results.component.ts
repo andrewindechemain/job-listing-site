@@ -2,12 +2,13 @@ import { Component, OnInit, ChangeDetectorRef    } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule,ActivatedRoute } from '@angular/router';
 import { ApiService } from '../services/api.service';
+import { SearchService } from '../services/search.service';
 import { FormsModule,FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-search-results',
   standalone: true,
-  imports: [CommonModule,RouterModule],
+  imports: [CommonModule,RouterModule, FormsModule],
   templateUrl: './search-results.component.html',
   styleUrl: './search-results.component.css'
 })
@@ -20,9 +21,10 @@ export class SearchResultsComponent implements OnInit   {
   filteredResults: any[] = [];
 
   constructor(
-  private route: ActivatedRoute) {}
+  private route: ActivatedRoute,public searchService: SearchService) {}
   private service!: ApiService; 
-    private cdr!: ChangeDetectorRef
+    private cdr!: ChangeDetectorRef;
+
    ngOnInit() {
     this.route.queryParams.subscribe(params => {
       const results = JSON.parse(params['results']);
@@ -77,5 +79,9 @@ export class SearchResultsComponent implements OnInit   {
         (result) => result.salary_min === this.relevance
         );
       }
+  }
+  updateSearchResults() {
+    this.searchService.resetSearchInput();
+    this.searchService.searchUser();
   }
 }
