@@ -2,6 +2,8 @@ import { Component, OnInit, ChangeDetectorRef    } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule,ActivatedRoute } from '@angular/router';
 import { ApiService } from '../services/api.service';
+import { FormsModule,FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-search-results',
   standalone: true,

@@ -2,14 +2,14 @@
     <p>Welcome to Career Client</p>
     <p class = "motto">World's number <span class="ranking">#1 job site</span></p>
   </div>
-  <form #searchField="ngForm" (ngSubmit)="searchUser()" novalidate>
+  <form #searchField="ngForm" (ngSubmit)="searchUser()" validate>
   <div class="search">
-    <input type="text" class="search-input form-control" id="searchInput" [(ngModel)]="searchInput"
-    required (input)="onInputChange($event)"  name="search" placeholder="Search for Jobs here:" [(ngModel)]="searchInput">
-    <button (click)="searchUser()" type="submit" class="search-button">Search!</button>
     <div *ngIf="searchField.submitted && searchField.invalid">
       <p class="error-message">Empty Input ! Please enter a word to search</p>
     </div>
+    <input type="text" class="search-input form-control" id="searchInput" [(ngModel)]="searchInput"
+    required (input)="onInputChange($event)"  name="search" placeholder="Search for Jobs here:" [(ngModel)]="searchInput">
+    <button (click)="searchUser()" type="submit" class="search-button">Search!</button>
   </div>
 </form>
 

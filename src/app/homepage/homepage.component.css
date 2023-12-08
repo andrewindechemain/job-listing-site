@@ -6,6 +6,10 @@
             color: black;
             font-size: 20px;
         }
+        .top-container{
+          display:flex;
+          flex-direction: row;
+        }
         .welcome {
         text-align: center;
         font-weight: bold;
@@ -45,6 +49,10 @@
         cursor: pointer;
         border-radius: 12px;
       }
+      .error-message{
+        color: red;
+        font-weight: bolder;
+      }
       @media only screen and (min-width: 320px) and (max-width: 768px) {
         .search, .welcome{
           font-size: 1rem;
@@ -53,3 +61,4 @@
           width:40%
         }
       }
+      
