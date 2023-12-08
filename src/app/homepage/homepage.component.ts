@@ -35,7 +35,6 @@ export class HomepageComponent implements OnInit   {
             })
            }
           
-        
         searchUser() {
           this.service.getDetailedSearch()
           .subscribe(data => {
@@ -59,9 +58,5 @@ export class HomepageComponent implements OnInit   {
   this.searchForm = this.fb.group({
     search: ['', Validators.required]
   });
-
-        }
-        
-
-       
+        }     
 }

@@ -1,9 +1,13 @@
 <div class="search-results">
-    <div class="search-bar"> 
-        <input type="text" class="search-input" 
-            placeholder="Search by Title or Company Name"> 
-        <button class="search-button">Search!</button> 
-    </div>
+    <div class="search-bar">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search by Title or Company Name"
+          [(ngModel)]="searchService.searchInput" id="searchInput"
+        />
+        <button class="search-button" (click)="updateSearchResults()">Search!</button>
+      </div>
      <div class="filter"> 
         <div> 
         <label class="filter-label" for="location">
@@ -99,17 +103,18 @@
             </div>
             <div class="job-detail"> 
                 <h2>{{ results[1].title  }}</h2> 
-                <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
+                <span class="images">
+                    <img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
                         <span id="upper-detail"><p class="organization">{{ results[1].company.display_name }}</p> 
-                    <p class="organization">{{ results[1].location.display_name }}</p></span>
-                    <p class="type">{{results[1].contract_type}}</p></span>
+                    <span class="left-5"><p class="organization">{{ results[1].location.display_name }}</p><p class="type">{{results[1].contract_type}}</p></span>
+                    </span></span>
                 <p class="resultsdescription">{{ results[1].description }}</p>
                  <p class="title">Salary Approximation in $</p> 
                  <ul> 
                     <li>{{results[1].salary_max}}</li> 
                     <li>{{results[1].salary_min}}</li> 
                 </ul> 
-                 <button class="apply-button" (click)="onApplyNowClick()" >Apply Now</button> 
+                 <button class="apply-button" (click)="onApplyNowClick()">Apply Now</button> 
             </div>
             <div class="job-detail"> 
                 <h2>{{ results[2].title  }}</h2> 

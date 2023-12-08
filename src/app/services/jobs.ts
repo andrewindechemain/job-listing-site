@@ -10,7 +10,6 @@ export class jobPosting {
       public description: string,
       public contract_type: string,
       public tags: string,
-      public relevance: number,
       public date_posted: number
     ) {
     }

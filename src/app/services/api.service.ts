@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {environment  } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class ApiService {
   getRelevance(){
     return this.http.get (`https://api.adzuna.com/v1/api/jobs/us/top_companies?app_id=${this.clientId}&app_key=${this.apiKey}`);
   }
-  getDetailedSearch(){
+  getDetailedSearch(): Observable<any> {
     return this.http.get (`http://api.adzuna.com/v1/api/jobs/us/search/1?app_id=${this.clientId}&app_key=${this.apiKey}&what=${this.search}&results_per_page=5`)
   }
   updateFields(what: string) {
