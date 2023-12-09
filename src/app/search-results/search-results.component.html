@@ -4,7 +4,8 @@
           type="text"
           class="search-input"
           placeholder="Search by Title or Company Name"
-          [(ngModel)]="searchService.searchInput" id="searchInput"
+          [(ngModel)]="searchInput"
+          required (input)="onInputChange($event)"
         />
         <button class="search-button" (click)="updateSearchResults()">Search!</button>
       </div>
@@ -23,9 +24,8 @@
     </select> 
 </div> 
     <div> 
-        <label class="filter-label" for="date">Date Posted:
-        </label> 
-        <select class="filter-select" id="date"> 
+        <label class="filter-label" for="date">Date Posted:</label> 
+        <select class="filter-select" id="date" [(ngModel)]="date" (change)="onDateChange()"> 
             <option value="all">All</option> 
             <option value="all">Today</option> 
             <option value="all">Yesterday</option> 
@@ -33,10 +33,8 @@
             <option value="all">This Month</option> 
             </select> </div>
              <div> 
-        <label class="filter-label" for="type">Job Type:
-
-        </label> 
-        <select class="filter-select" id="type"> 
+        <label class="filter-label" for="type">Job Type:</label> 
+        <select class="filter-select" id="type" [(ngModel)]="type" (change)="onTypeChange()"> 
             <option value="all">All</option> 
             <option value="full-time">Full-Time</option> 
             <option value="part-time">Part-Time</option> 
@@ -44,7 +42,7 @@
             <option value="internship">Internship</option> 
         </select> </div> 
         <div> <label class="filter-label" for="relevance">Relevance:</label> 
-            <select class="filter-select" id="relevance"> 
+            <select class="filter-select" id="relevance" [(ngModel)]="relevance" (change)="onRelevanceChange()"> 
                 <option value="all">All</option> 
                 <option value="most-relevant">Most Relevant</option> 
                 <option value="least-relevant">Least Relevant</option> 

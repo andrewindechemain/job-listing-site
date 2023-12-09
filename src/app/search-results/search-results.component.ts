@@ -1,9 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, OnInit, ChangeDetectorRef    } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule,ActivatedRoute } from '@angular/router';
 import { ApiService } from '../services/api.service';
-import { SearchService } from '../services/search.service';
-import { FormsModule,FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-search-results',
@@ -13,6 +13,8 @@ import { FormsModule,FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrl: './search-results.component.css'
 })
 export class SearchResultsComponent implements OnInit   {
+  searchResults:any;
+  searchInput:any;
   results: any[] = [];
   location: string = 'all';
   date: string = 'all';
@@ -21,8 +23,7 @@ export class SearchResultsComponent implements OnInit   {
   filteredResults: any[] = [];
 
   constructor(
-  private route: ActivatedRoute,public searchService: SearchService) {}
-  private service!: ApiService; 
+  private route: ActivatedRoute, private service: ApiService ) {}
     private cdr!: ChangeDetectorRef;
 
    ngOnInit() {
@@ -30,8 +31,10 @@ export class SearchResultsComponent implements OnInit   {
       const results = JSON.parse(params['results']);
       this.results = results.results || [];
       this.applyFilters();
+      this.searchResults = this.service.getDetailedSearch();
     });
   }
+  
   onApplyNowClick() {
     alert('Your Application has been recieved!'); 
   }
@@ -80,8 +83,17 @@ export class SearchResultsComponent implements OnInit   {
         );
       }
   }
+
   updateSearchResults() {
-    this.searchService.resetSearchInput();
-    this.searchService.searchUser();
+    this.results = [];
+    this.service.getDetailedSearch().subscribe((newResults: ApiService) => {
+      this.searchResults = newResults || { results: [] };
+      this.results = this.searchResults.results || [];
+      this.applyFilters();
+    });
+  }
+  onInputChange(event: any) {
+    this.searchInput = event.target.value;
+    this.service.updateFields(this.searchInput);
   }
 }
