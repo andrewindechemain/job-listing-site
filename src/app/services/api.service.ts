@@ -21,7 +21,8 @@ export class ApiService {
     return this.http.get (`https://api.adzuna.com/v1/api/jobs/us/top_companies?app_id=${this.clientId}&app_key=${this.apiKey}`);
   }
   getDetailedSearch(): Observable<any> {
-    return this.http.get (`http://api.adzuna.com/v1/api/jobs/us/search/1?app_id=${this.clientId}&app_key=${this.apiKey}&what=${this.search}&results_per_page=5`)
+    const apiUrl  = `http://api.adzuna.com/v1/api/jobs/us/search/1?app_id=${this.clientId}&app_key=${this.apiKey}&what=${this.search}&results_per_page=5`;
+    return this.http.get(apiUrl);
   }
   updateFields(what: string) {
     this.search = what;

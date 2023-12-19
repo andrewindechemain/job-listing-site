@@ -15,14 +15,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { DatePipe } from './pipes/date.pipe';
 import { ApiService } from './services/api.service';
-import { SearchService } from './services/search.service';
+import { SearchOptionsPipe } from './pipes/search-options.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DatePipe, 
+    DatePipe
   ],
   imports: [
     BrowserModule,
@@ -30,6 +30,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FormsModule,
     RouterModule,
     AppRoutingModule,
+    SearchOptionsPipe,
     NavbarComponent,
     HomepageComponent,
     SearchResultsComponent,
@@ -40,7 +41,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NgxPaginationModule,
     StoreModule.forRoot({}, {}),
   ],
-  providers: [ApiService,SearchService],
+  providers: [ApiService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

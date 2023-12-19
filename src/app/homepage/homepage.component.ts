@@ -42,7 +42,6 @@ export class HomepageComponent implements OnInit   {
             { queryParams: { results: JSON.stringify(data) } });
             this.searchResults = data;
             this.cdr.detectChanges();
-            console.log(data);
     });
         }
         onInputChange(event: any) {
