@@ -13,16 +13,15 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
-import { DatePipe } from './pipes/date.pipe';
+import { CustomDatePipe } from './pipes/date.pipe';
 import { ApiService } from './services/api.service';
-import { SearchOptionsPipe } from './pipes/search-options.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [
+    CustomDatePipe,
     AppComponent,
-    DatePipe
   ],
   imports: [
     BrowserModule,
@@ -30,7 +29,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FormsModule,
     RouterModule,
     AppRoutingModule,
-    SearchOptionsPipe,
     NavbarComponent,
     HomepageComponent,
     SearchResultsComponent,
@@ -41,7 +39,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NgxPaginationModule,
     StoreModule.forRoot({}, {}),
   ],
-  providers: [ApiService],
+  providers: [ApiService,CustomDatePipe],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }

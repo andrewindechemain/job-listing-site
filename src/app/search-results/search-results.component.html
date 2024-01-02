@@ -13,7 +13,7 @@
         <div> 
         <label class="filter-label" for="location">Filter by Location:</label> 
     <select class="filter-select" id="location">
-        [(ngModel)]="location" (change)="applyFilters($event)">
+        [(ngModel)]="location" (change)="onLocationChange()">
         <option value="all">All</option>
         <option value="New York">New york</option>
         <option value="Los Angeles">Los Angeles</option>
@@ -21,19 +21,19 @@
         <option value="Georgia">Georgia</option>
     </select> 
 </div> 
-        <div> 
-        <label class="filter-label" for="type">Filter by Job Type:</label> 
-        <select class="filter-select" id="type" [(ngModel)]="type" (change)="onTypeChange()"> 
-            <option value="all">All</option> 
-            <option value="full-time">Full-Time</option> 
-            <option value="part-time">Part-Time</option> 
-            <option value="contract">Contract</option> 
-            <option value="internship">Internship</option> 
-        </select> 
-    </div> 
+<div>
+    <label class="filter-label" for="location">Filter by Location:</label>
+    <select class="filter-select" id="location" [(ngModel)]="location" (ngModelChange)="onLocationChange()">
+        <option value="all">All</option>
+        <option value="New York">New York</option>
+        <option value="Los Angeles">Los Angeles</option>
+        <option value="Texas">Texas</option>
+        <option value="Georgia">Georgia</option>
+      </select>
+  </div>
     <div> 
         <label class="filter-label" for="date">Sort by Date Posted:</label> 
-        <select class="filter-select" id="date" [(ngModel)]="date"> 
+        <select class="filter-select" id="date" [(ngModel)]="date" (change)="onDateChange()"> 
             <option value="all">All</option>
             <option value="today">Latest</option>  
             <option value="this_month">This Month</option> 
@@ -75,7 +75,7 @@
                     <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
                     </span> 
                     <p>{{ results[2].location.display_name }}</p> 
-                    <span>{{ results[2].created | date  }}</span> 
+                    <span>{{ results[2].created |  date}}</span> 
                 </div> 
                 <ul class = "pagination-buttons">
                     <li><button class="page">1</button></li>
