@@ -1,10 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'date',
+  name: 'customDatePipe',
   pure: true
 })
-export class DatePipe implements PipeTransform {
+export class CustomDatePipe implements PipeTransform {
   transform(value: string): string {
     if (!value) return '';
 

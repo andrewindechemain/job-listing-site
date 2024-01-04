@@ -8,7 +8,7 @@
       <p class="error-message">Empty Input ! Please enter a word to search</p>
     </div>
     <input type="text" class="search-input form-control" id="searchInput" [(ngModel)]="searchInput"
-    required (input)="onInputChange($event)"  name="search" placeholder="Search for Jobs here:" [(ngModel)]="searchInput">
+    required (input)="onInputChange($event)"  name="search" placeholder="Search for Jobs here">
     <button (click)="searchUser()" type="submit" class="search-button">Search!</button>
   </div>
 </form>
