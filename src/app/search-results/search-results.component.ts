@@ -52,10 +52,13 @@ export class SearchResultsComponent implements OnInit   {
     return this.customDatePipe.transform(value);
   }
    ngOnInit() {
+    this.results = [];
+    this.filteredResults = [];
+  
     this.route.queryParams.subscribe(params => {
-      const results = JSON.parse(params['results']);
-      this.results = results.results || [];
-      console.log('Results:', this.results); 
+      const newResults = JSON.parse(params['results']);
+      this.results = newResults.results || [];
+      console.log('Results:', this.results);
       this.applyFilters();
       this.totalItems = this.filteredResults.length;
       this.pageOfItems = this.filteredResults.slice(0, this.itemsPerPage);
@@ -90,19 +93,6 @@ export class SearchResultsComponent implements OnInit   {
   onRelevanceChange() {
     this.applyFilters();
     this.sortByRelevance();
-    const today = new Date();
-    const oneMonthAgo = new Date();
-    oneMonthAgo.setMonth(today.getMonth() - 1);
-    this.filteredResults = this.filteredResults.filter(result => {
-      const resultDate = new Date(result.created);
-      if (this.date === 'most_relevant') {
-        return resultDate.toDateString() === today.toDateString();
-      } else if (this.date === 'least_relevant') {
-        return resultDate.getMonth() === oneMonthAgo.getMonth();
-      } else {
-        return true;
-      }
-    });
   }
 
   onTypeChange() {
@@ -116,9 +106,19 @@ export class SearchResultsComponent implements OnInit   {
     this.cdr.detectChanges();
   }
   sortByRelevance(){
-    this.results.sort((a, b) => {
-      return new Date(b.created).getTime() - new Date(a.created).getTime();
-     });
+    this.filteredResults.sort((a, b) => {
+      const dateA = new Date(a.created).getTime();
+      const dateB = new Date(b.created).getTime();
+  
+      if (this.relevance === 'most_relevant') {
+        return dateB - dateA;
+      } else if (this.relevance === 'least_relevant') {
+        return dateA - dateB;
+      } else {
+        return 0;
+      }
+    });
+    this.cdr.detectChanges();
   }
   applyFilters() {
     this.filteredResults = this.results.filter(result => {
@@ -130,11 +130,17 @@ export class SearchResultsComponent implements OnInit   {
     });
   }
   updateSearchResults() {
-      this.service.getDetailedSearch().subscribe((newResults: ApiService) => {
-        console.log('API Response:', newResults);
-        this.searchResults = newResults || { filteredResults: [] };
-        this.filteredResults = this.searchResults.results || [];     
-      });
+    this.results = [];
+    this.filteredResults = [];
+  
+    this.service.getDetailedSearch().subscribe((newResults: ApiService) => {
+      console.log('API Response:', newResults);
+      this.searchResults = newResults || { results: [] };
+      this.results = this.searchResults.results || [];
+      this.applyFilters();
+      this.totalItems = this.filteredResults.length;
+      this.pageOfItems = this.filteredResults.slice(0, this.itemsPerPage);
+    });
   }
   onInputChange(event: any) {
     this.searchInput = event.target.value;
