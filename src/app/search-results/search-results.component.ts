@@ -88,21 +88,20 @@ export class SearchResultsComponent implements OnInit   {
    }
 
   onRelevanceChange() {
-    this.applyFilters();
+    const today = new Date().getTime();
+    const oneMonthAgo = new Date().setMonth(new Date().getMonth() - 1);
+  
+    if (this.date === 'most_relevant') {
+      this.filteredResults = this.results.filter(result => new Date(result.created).toDateString() === new Date().toDateString());
+    } else if (this.date === 'this_month') {
+      this.filteredResults = this.results.filter(result => new Date(result.created).getTime() > oneMonthAgo && new Date(result.created).getTime() <= today);
+    } else if (this.date === 'least_relevant') {
+      this.filteredResults = this.results.filter(result => new Date(result.created).getTime() > oneMonthAgo - 30 * 24 * 60 * 60 * 1000 && new Date(result.created).getTime() <= oneMonthAgo);
+    } else {
+      this.filteredResults = this.results;
+    }
+  
     this.sortByRelevance();
-    const today = new Date();
-    const oneMonthAgo = new Date();
-    oneMonthAgo.setMonth(today.getMonth() - 1);
-    this.filteredResults = this.filteredResults.filter(result => {
-      const resultDate = new Date(result.created);
-      if (this.date === 'most_relevant') {
-        return resultDate.toDateString() === today.toDateString();
-      } else if (this.date === 'least_relevant') {
-        return resultDate.getMonth() === oneMonthAgo.getMonth();
-      } else {
-        return true;
-      }
-    });
   }
 
   onTypeChange() {
@@ -116,9 +115,18 @@ export class SearchResultsComponent implements OnInit   {
     this.cdr.detectChanges();
   }
   sortByRelevance(){
-    this.results.sort((a, b) => {
-      return new Date(b.created).getTime() - new Date(a.created).getTime();
-     });
+    this.filteredResults.sort((a, b) => {
+      const dateA = new Date(a.created).getTime();
+      const dateB = new Date(b.created).getTime();
+  
+      if (this.relevance === 'most_relevant') {
+        return dateB - dateA;
+      } else if (this.relevance === 'least_relevant') {
+        return dateA - dateB;
+      } else {
+        return 0;
+      }
+    });
   }
   applyFilters() {
     this.filteredResults = this.results.filter(result => {
