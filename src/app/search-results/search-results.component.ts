@@ -52,10 +52,13 @@ export class SearchResultsComponent implements OnInit   {
     return this.customDatePipe.transform(value);
   }
    ngOnInit() {
+    this.results = [];
+    this.filteredResults = [];
+  
     this.route.queryParams.subscribe(params => {
-      const results = JSON.parse(params['results']);
-      this.results = results.results || [];
-      console.log('Results:', this.results); 
+      const newResults = JSON.parse(params['results']);
+      this.results = newResults.results || [];
+      console.log('Results:', this.results);
       this.applyFilters();
       this.totalItems = this.filteredResults.length;
       this.pageOfItems = this.filteredResults.slice(0, this.itemsPerPage);
@@ -88,19 +91,7 @@ export class SearchResultsComponent implements OnInit   {
    }
 
   onRelevanceChange() {
-    const today = new Date().getTime();
-    const oneMonthAgo = new Date().setMonth(new Date().getMonth() - 1);
-  
-    if (this.date === 'most_relevant') {
-      this.filteredResults = this.results.filter(result => new Date(result.created).toDateString() === new Date().toDateString());
-    } else if (this.date === 'this_month') {
-      this.filteredResults = this.results.filter(result => new Date(result.created).getTime() > oneMonthAgo && new Date(result.created).getTime() <= today);
-    } else if (this.date === 'least_relevant') {
-      this.filteredResults = this.results.filter(result => new Date(result.created).getTime() > oneMonthAgo - 30 * 24 * 60 * 60 * 1000 && new Date(result.created).getTime() <= oneMonthAgo);
-    } else {
-      this.filteredResults = this.results;
-    }
-  
+    this.applyFilters();
     this.sortByRelevance();
   }
 
@@ -127,6 +118,7 @@ export class SearchResultsComponent implements OnInit   {
         return 0;
       }
     });
+    this.cdr.detectChanges();
   }
   applyFilters() {
     this.filteredResults = this.results.filter(result => {
@@ -138,11 +130,17 @@ export class SearchResultsComponent implements OnInit   {
     });
   }
   updateSearchResults() {
-      this.service.getDetailedSearch().subscribe((newResults: ApiService) => {
-        console.log('API Response:', newResults);
-        this.searchResults = newResults || { filteredResults: [] };
-        this.filteredResults = this.searchResults.results || [];     
-      });
+    this.results = [];
+    this.filteredResults = [];
+  
+    this.service.getDetailedSearch().subscribe((newResults: ApiService) => {
+      console.log('API Response:', newResults);
+      this.searchResults = newResults || { results: [] };
+      this.results = this.searchResults.results || [];
+      this.applyFilters();
+      this.totalItems = this.filteredResults.length;
+      this.pageOfItems = this.filteredResults.slice(0, this.itemsPerPage);
+    });
   }
   onInputChange(event: any) {
     this.searchInput = event.target.value;
