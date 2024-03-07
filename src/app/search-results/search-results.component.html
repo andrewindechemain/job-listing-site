@@ -53,29 +53,29 @@
         <div class="job-list" > 
                 <div class="job-card"> 
                     <div>
-                    <h3>{{ filteredResults[0].title  }}</h3> 
+                    <h3>{{ filteredResults[0]?.title  }}</h3> 
                     </div>
-                    <p>{{ filteredResults[0].company.display_name }}</p> 
+                    <p>{{ filteredResults[0]?.company?.display_name }}</p> 
                     <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
                     </span>
-                    <p>{{ filteredResults[0].location.display_name }}</p> 
-                    <span>{{ filteredResults[0].created | date  }}</span> 
+                    <p>{{ filteredResults[0]?.location.display_name }}</p> 
+                    <span>{{ filteredResults[0]?.created | date  }}</span> 
                 </div> 
                 <div class="job-card"> 
-                    <h3>{{ filteredResults[1].title }}</h3> 
-                    <p>{{ filteredResults[1].company.display_name }}</p>
+                    <h3>{{ filteredResults[1]?.title }}</h3> 
+                    <p>{{ filteredResults[1]?.company.display_name }}</p>
                     <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
                     </span> 
-                    <p>{{ filteredResults[1].location.display_name }}</p> 
-                    <span>{{ filteredResults[1].created | date  }}</span> 
+                    <p>{{ filteredResults[1]?.location?.display_name }}</p> 
+                    <span>{{ filteredResults[1]?.created | date  }}</span> 
                 </div>  
                 <div class="job-card"> 
-                    <h3>{{ filteredResults[2].title }}</h3> 
-                    <p>{{ filteredResults[2].company.display_name }}</p>
+                    <h3>{{ filteredResults[2]?.title }}</h3> 
+                    <p>{{ filteredResults[2]?.company.display_name }}</p>
                     <span class="images"><img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
                     </span> 
-                    <p>{{ filteredResults[2].location.display_name }}</p> 
-                    <span>{{ filteredResults[2].created |  date}}</span> 
+                    <p>{{ filteredResults[2]?.location.display_name }}</p> 
+                    <span>{{ filteredResults[2]?.created |  date}}</span> 
                 </div> 
                 
                 <ul class = "pagination-buttons">
@@ -86,47 +86,47 @@
                 </div> 
         <div class="job-detail-container">
             <div class="job-detail"> 
-                <h2>{{ filteredResults[0].title  }}</h2> 
+                <h2>{{ filteredResults[0]?.title  }}</h2> 
                 <span class="images">
                     <img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
-                        <span id="upper-detail"><p class="organization">{{ filteredResults[0].company.display_name }}</p> 
-                    <span class="left-5"><p class="organization">{{ filteredResults[1].location.display_name }}</p><p class="type">{{filteredResults[1].contract_type}}</p></span>
+                        <span id="upper-detail"><p class="organization">{{ filteredResults[0]?.company.display_name }}</p> 
+                    <span class="left-5"><p class="organization">{{ filteredResults[1]?.location.display_name }}</p><p class="type">{{filteredResults[1]?.contract_type}}</p></span>
                     </span></span>
-                <p class="resultsdescription">{{ filteredResults[0].description }}</p>
+                <p class="resultsdescription">{{ filteredResults[0]?.description }}</p>
                  <p class="title">Salary Approximation in $</p> 
                  <ul> 
-                    <li>{{filteredResults[0].salary_max}}</li> 
-                    <li>{{filteredResults[0].salary_min}}</li> 
+                    <li>{{filteredResults[0]?.salary_max}}</li> 
+                    <li>{{filteredResults[0]?.salary_min}}</li> 
                 </ul> 
                  <button class="apply-button" (click)="onApplyNowClick()">Apply Now</button> 
             </div>
             <div class="job-detail"> 
-                <h2>{{ filteredResults[1].title  }}</h2> 
+                <h2>{{ filteredResults[1]?.title  }}</h2> 
                 <span class="images">
                     <img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
-                        <span id="upper-detail"><p class="organization">{{ filteredResults[1].company.display_name }}</p> 
-                    <span class="left-5"><p class="organization">{{ filteredResults[1].location.display_name }}</p><p class="type">{{filteredResults[1].contract_type}}</p></span>
+                        <span id="upper-detail"><p class="organization">{{ filteredResults[1]?.company.display_name }}</p> 
+                    <span class="left-5"><p class="organization">{{ filteredResults[1]?.location.display_name }}</p><p class="type">{{filteredResults[1]?.contract_type}}</p></span>
                     </span></span>
-                <p class="resultsdescription">{{ filteredResults[1].description }}</p>
+                <p class="resultsdescription">{{ filteredResults[1]?.description }}</p>
                  <p class="title">Salary Approximation in $</p> 
                  <ul> 
-                    <li>{{filteredResults[1].salary_max}}</li> 
-                    <li>{{filteredResults[1].salary_min}}</li> 
+                    <li>{{filteredResults[1]?.salary_max}}</li> 
+                    <li>{{filteredResults[1]?.salary_min}}</li> 
                 </ul> 
                  <button class="apply-button" (click)="onApplyNowClick()">Apply Now</button> 
             </div>
             <div class="job-detail"> 
-                <h2>{{ filteredResults[2].title  }}</h2> 
+                <h2>{{ filteredResults[2]?.title  }}</h2> 
                 <span class="images">
                     <img src="assets/images/microsoft logo.png" alt="assets/img/avatar.png">
-                        <span id="upper-detail"><p class="organization">{{ filteredResults[2].company.display_name }}</p> 
-                    <span class="left-5"><p class="organization">{{ filteredResults[2].location.display_name }}</p><p class="type">{{filteredResults[2].contract_type}}</p></span>
+                        <span id="upper-detail"><p class="organization">{{ filteredResults[2]?.company.display_name }}</p> 
+                    <span class="left-5"><p class="organization">{{ filteredResults[2]?.location.display_name }}</p><p class="type">{{filteredResults[2]?.contract_type}}</p></span>
                     </span></span>
-                <p class="resultsdescription">{{ filteredResults[2].description }}</p>
+                <p class="resultsdescription">{{ filteredResults[2]?.description }}</p>
                  <p class="title">Salary Approximation in $</p> 
                  <ul> 
-                    <li>{{filteredResults[2].salary_max}}</li> 
-                    <li>{{filteredResults[2].salary_min}}</li> 
+                    <li>{{filteredResults[2]?.salary_max}}</li> 
+                    <li>{{filteredResults[2]?.salary_min}}</li> 
                 </ul> 
                  <button class="apply-button" (click)="onApplyNowClick()">Apply Now</button> 
             </div>
